@@ -1,11 +1,12 @@
-package org.springsource.cloudfoundry.mvc.web;
+package com.objectwing.cfdemo.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springsource.cloudfoundry.mvc.services.Customer;
-import org.springsource.cloudfoundry.mvc.services.CustomerService;
+
+import com.objectwing.cfdemo.services.Customer;
+import com.objectwing.cfdemo.services.CustomerService;
 
 import java.util.Collection;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package org.springsource.cloudfoundry.mvc.services;
+package com.objectwing.cfdemo.services;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

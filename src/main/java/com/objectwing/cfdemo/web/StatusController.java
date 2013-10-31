@@ -1,4 +1,4 @@
-package org.springsource.cloudfoundry.mvc.web;
+package com.objectwing.cfdemo.web;
 
 import org.cloudfoundry.runtime.env.CloudEnvironment;
 import org.springframework.stereotype.Controller;

@@ -14,9 +14,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.springsource.cloudfoundry.mvc.services.config.ServicesConfiguration;
+
+import com.objectwing.cfdemo.services.Customer;
+import com.objectwing.cfdemo.services.CustomerService;
+import com.objectwing.cfdemo.services.config.ServicesConfiguration;
 
 import javax.sql.DataSource;
+
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;

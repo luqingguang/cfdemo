@@ -1,4 +1,4 @@
-package org.springsource.cloudfoundry.mvc.services.config;
+package com.objectwing.cfdemo.services.config;
 
 
 import org.hibernate.dialect.H2Dialect;
@@ -14,9 +14,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springsource.cloudfoundry.mvc.services.Customer;
+
+import com.objectwing.cfdemo.services.Customer;
 
 import javax.sql.DataSource;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

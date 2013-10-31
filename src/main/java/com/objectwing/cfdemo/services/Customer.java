@@ -1,4 +1,4 @@
-package org.springsource.cloudfoundry.mvc.services;
+package com.objectwing.cfdemo.services;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

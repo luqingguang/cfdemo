@@ -1,11 +1,12 @@
-package org.springsource.cloudfoundry.mvc.services.config;
+package com.objectwing.cfdemo.services.config;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springsource.cloudfoundry.mvc.services.CustomerService;
+
+import com.objectwing.cfdemo.services.CustomerService;
 
 import javax.persistence.EntityManagerFactory;
 

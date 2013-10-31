@@ -1,4 +1,4 @@
-package org.springsource.cloudfoundry.mvc.services.config;
+package com.objectwing.cfdemo.services.config;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,7 +21,8 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springsource.cloudfoundry.mvc.services.Customer;
+
+import com.objectwing.cfdemo.services.Customer;
 
 @Configuration
 @Profile("cloud")
