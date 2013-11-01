@@ -1,5 +1,6 @@
 package com.objectwing.cfdemo.services.config;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,9 +12,13 @@ import org.cloudfoundry.runtime.env.RdbmsServiceInfo;
 import org.cloudfoundry.runtime.env.RedisServiceInfo;
 import org.cloudfoundry.runtime.service.keyvalue.RedisServiceCreator;
 import org.cloudfoundry.runtime.service.relational.RdbmsServiceCreator;
+import org.hibernate.dialect.MySQL5Dialect;
 import org.hibernate.dialect.PostgreSQLDialect;
 import org.hibernate.ejb.HibernatePersistence;
+import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -37,7 +42,7 @@ public class CloudFoundryDataSourceConfiguration   {
         return dataSourceCreator.createService(mysqlSvc.iterator().next());
     }
 
-    @Bean
+    /*@Bean
     public RedisTemplate<String, Object> redisTemplate() throws Exception {
         RedisServiceInfo info = cloudEnvironment.getServiceInfos(RedisServiceInfo.class).iterator().next();
         RedisServiceCreator creator = new RedisServiceCreator();
@@ -45,7 +50,7 @@ public class CloudFoundryDataSourceConfiguration   {
         RedisTemplate<String, Object> ro = new RedisTemplate<String, Object>();
         ro.setConnectionFactory(connectionFactory);
         return ro;
-    }
+    }*/
 
     @Bean
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean( DataSource dataSource  ) throws Exception {
@@ -54,9 +59,8 @@ public class CloudFoundryDataSourceConfiguration   {
         em.setPackagesToScan(Customer.class.getPackage().getName());
         em.setPersistenceProvider(new HibernatePersistence());
         Map<String, String> p = new HashMap<String, String>();
-        p.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "create");
-        p.put(org.hibernate.cfg.Environment.HBM2DDL_IMPORT_FILES, "import_psql.sql");
-        p.put(org.hibernate.cfg.Environment.DIALECT, PostgreSQLDialect.class.getName());
+        p.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "create");       
+        p.put(org.hibernate.cfg.Environment.DIALECT, MySQL5Dialect.class.getName());
         p.put(org.hibernate.cfg.Environment.SHOW_SQL, "true");
         em.setJpaPropertyMap(p);
         return em;
@@ -65,7 +69,11 @@ public class CloudFoundryDataSourceConfiguration   {
 
     @Bean
     public CacheManager cacheManager() throws Exception {
-        return new RedisCacheManager(redisTemplate());
+    	 SimpleCacheManager scm = new SimpleCacheManager();
+         Cache cache = new ConcurrentMapCache("customers");
+         scm.setCaches(Arrays.asList(cache));
+         return scm;
+        //return new RedisCacheManager(redisTemplate());
     }
 
 }
