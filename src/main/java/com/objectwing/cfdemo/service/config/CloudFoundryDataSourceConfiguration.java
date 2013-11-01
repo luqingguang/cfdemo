@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services.config;
+package com.objectwing.cfdemo.service.config;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,7 +27,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import com.objectwing.cfdemo.services.Customer;
+import com.objectwing.cfdemo.domain.Customer;
 
 @Configuration
 @Profile("cloud")

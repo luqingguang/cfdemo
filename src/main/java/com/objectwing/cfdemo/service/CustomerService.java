@@ -1,12 +1,15 @@
-package com.objectwing.cfdemo.services;
+package com.objectwing.cfdemo.service;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.objectwing.cfdemo.domain.Customer;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;

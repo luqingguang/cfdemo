@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services.config;
+package com.objectwing.cfdemo.service.config;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
@@ -6,7 +6,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.objectwing.cfdemo.services.CustomerService;
+import com.objectwing.cfdemo.service.CustomerService;
 
 import javax.persistence.EntityManagerFactory;
 

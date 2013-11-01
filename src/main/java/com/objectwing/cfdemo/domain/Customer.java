@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services;
+package com.objectwing.cfdemo.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

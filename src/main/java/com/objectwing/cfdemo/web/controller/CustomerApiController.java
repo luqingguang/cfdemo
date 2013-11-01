@@ -1,12 +1,12 @@
-package com.objectwing.cfdemo.web;
+package com.objectwing.cfdemo.web.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.objectwing.cfdemo.services.Customer;
-import com.objectwing.cfdemo.services.CustomerService;
+import com.objectwing.cfdemo.domain.Customer;
+import com.objectwing.cfdemo.service.CustomerService;
 
 import java.util.Collection;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services.config;
+package com.objectwing.cfdemo.service.config;
 
 
 import org.hibernate.dialect.H2Dialect;
@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import com.objectwing.cfdemo.services.Customer;
+import com.objectwing.cfdemo.domain.Customer;
 
 import javax.sql.DataSource;
 
