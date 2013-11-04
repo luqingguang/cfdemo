@@ -6,7 +6,23 @@
     <script src="${pageContext.request.contextPath}/web/assets/js/jquery-1.7.2.min.js"></script>
     <script src="${pageContext.request.contextPath}/web/assets/js/angular-1.0.0rc6.js"></script>
     <script src="${pageContext.request.contextPath}/web/views/customers.js"></script>
-
+    <script>
+    	var contextPath = "<%=request.getContextPath()%>";
+    	dojoConfig = {
+	  	      tlmSiblingOfDojo: false,
+	  	      parseOnLoad: false,
+	  	      async: true,
+	  	      has: {
+	  	      	"dojo-firebug": true,
+	  	      	"dojo-debug-messages": true
+	  	      },
+	  	      packages:[
+				{name: "idx", location: contextPath + "/web/idx"}
+	  	      ]
+    	};
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
+    <script src="${pageContext.request.contextPath}/web/views/testing.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/views/customers.css"/>
 
