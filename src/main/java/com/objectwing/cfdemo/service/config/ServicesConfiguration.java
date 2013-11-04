@@ -6,7 +6,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.objectwing.cfdemo.service.CustomerService;
+import com.objectwing.cfdemo.service.PersonService;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -16,7 +16,7 @@ import javax.persistence.EntityManagerFactory;
 @EnableCaching
 @EnableTransactionManagement
 @Import({CloudFoundryDataSourceConfiguration.class, LocalDataSourceConfiguration.class})
-@ComponentScan(basePackageClasses = {CustomerService.class})
+@ComponentScan(basePackageClasses = {PersonService.class})
 public class ServicesConfiguration {
 
     @Bean

@@ -27,7 +27,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import com.objectwing.cfdemo.domain.Customer;
+import com.objectwing.cfdemo.domain.Person;
 
 @Configuration
 @Profile("cloud")
@@ -56,7 +56,7 @@ public class CloudFoundryDataSourceConfiguration   {
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean( DataSource dataSource  ) throws Exception {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource( dataSource );
-        em.setPackagesToScan(Customer.class.getPackage().getName());
+        em.setPackagesToScan(Person.class.getPackage().getName());
         em.setPersistenceProvider(new HibernatePersistence());
         Map<String, String> p = new HashMap<String, String>();
         p.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "create");       
