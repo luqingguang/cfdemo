@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.web;
+package com.objectwing.cfdemo.web.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -10,13 +10,13 @@ import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.objectwing.cfdemo.services.config.ServicesConfiguration;
+import com.objectwing.cfdemo.service.config.ServicesConfiguration;
 
 
 @Configuration
 @EnableWebMvc
 @Import(ServicesConfiguration.class)
-@ComponentScan
+@ComponentScan("com.objectwing.cfdemo.web.controller")
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean

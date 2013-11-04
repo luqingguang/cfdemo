@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.web;
+package com.objectwing.cfdemo.web.controller;
 
 import org.cloudfoundry.runtime.env.CloudEnvironment;
 import org.springframework.stereotype.Controller;

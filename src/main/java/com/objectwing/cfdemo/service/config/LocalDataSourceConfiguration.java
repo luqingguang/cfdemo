@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services.config;
+package com.objectwing.cfdemo.service.config;
 
 
 import org.hibernate.dialect.H2Dialect;
@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import com.objectwing.cfdemo.services.Customer;
+import com.objectwing.cfdemo.domain.Person;
 
 import javax.sql.DataSource;
 
@@ -58,7 +58,7 @@ public class LocalDataSourceConfiguration   {
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean( DataSource dataSource  ) throws Exception {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource( dataSource );
-        em.setPackagesToScan(Customer.class.getPackage().getName());
+        em.setPackagesToScan(Person.class.getPackage().getName());
         em.setPersistenceProvider(new HibernatePersistence());
         Map<String, String> p = new HashMap<String, String>();
         p.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "create");

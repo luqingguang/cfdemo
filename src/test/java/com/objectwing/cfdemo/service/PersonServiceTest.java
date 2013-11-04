@@ -1,4 +1,4 @@
-package com.objectwing.cfdemo.services;
+package com.objectwing.cfdemo.service;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,9 +15,9 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import com.objectwing.cfdemo.services.Customer;
-import com.objectwing.cfdemo.services.CustomerService;
-import com.objectwing.cfdemo.services.config.ServicesConfiguration;
+import com.objectwing.cfdemo.domain.Person;
+import com.objectwing.cfdemo.service.PersonService;
+import com.objectwing.cfdemo.service.config.ServicesConfiguration;
 
 import javax.sql.DataSource;
 
@@ -29,11 +29,11 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("default")
 @ContextConfiguration
-public class CustomerServiceTest {
+public class PersonServiceTest {
 
 
     @Autowired
-    private CustomerService customerService;
+    private PersonService personService;
 
     @Autowired
     private PlatformTransactionManager transactionManager;
@@ -43,16 +43,18 @@ public class CustomerServiceTest {
 
     Date signupDate = new Date();
 
-    String firstName = "Josh";
+    String name = "Josh Long";
 
-    String lastName = "Long";
+    String loginName = "joshlong@cn.ibm.com";
+    
+    String password = "password";
 
     JdbcTemplate jdbcTemplate;
 
 
     @Configuration
     @Import({ServicesConfiguration.class})
-    public static class CustomerServiceTestConfiguration {
+    public static class PersonServiceTestConfiguration {
         // noop we just want the beans in the ServicesConfiguration class
     }
 
@@ -66,39 +68,39 @@ public class CustomerServiceTest {
         transactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
-                jdbcTemplate.execute("delete from CUSTOMER");
+                jdbcTemplate.execute("delete from PERSON");
             }
         });
     }
 
     @Test
-    public void testCreatingCustomers() {
-        Customer customer = customerService.createCustomer(this.firstName, this.lastName, this.signupDate);
-        assertNotNull("the customer can't be null", customer);
-        assertEquals(customer.getFirstName(), this.firstName);
-        assertEquals(customer.getLastName(), this.lastName);
-        assertEquals(customer.getSignupDate(), this.signupDate);
+    public void testCreatingPeoples() {
+        Person person = personService.createPerson(this.name, this.loginName,this.password, this.signupDate);
+        assertNotNull("the person can't be null", person);
+        assertEquals(person.getName(), this.name);
+        assertEquals(person.getLoginName(), this.loginName);
+        assertEquals(person.getSignupDate(), this.signupDate);
     }
 
     @Test
-    public void testUpdatingACustomer() throws Exception {
-        Customer customer = customerService.createCustomer(this.firstName, this.lastName, this.signupDate);
-        assertNotNull("the customer can't be null", customer);
-        assertEquals(customer.getFirstName(), this.firstName);
-        assertEquals(customer.getLastName(), this.lastName);
-        assertEquals(customer.getSignupDate(), this.signupDate);
+    public void testUpdatingAPeople() throws Exception {
+    	 Person person = personService.createPerson(this.name, this.loginName,this.password, this.signupDate);
+         assertNotNull("the person can't be null", person);
+         assertEquals(person.getName(), this.name);
+         assertEquals(person.getLoginName(), this.loginName);
+         assertEquals(person.getSignupDate(), this.signupDate);
 
-        customerService.updateCustomer(customer.getId(), "Joshua", customer.getLastName(), customer.getSignupDate());
+        personService.updatePerson(person.getId(), "Joshua", person.getPassword(), person.getSignupDate());
 
-        customer = customerService.getCustomerById(customer.getId());
-        assertEquals(customer.getFirstName(), "Joshua");
+        person = personService.getPersonById(person.getId());
+        assertEquals(person.getName(), "Joshua");
 
     }
 
     @Test
-    public void testSearchingForCustomers() throws Exception {
-        Customer customer = customerService.createCustomer(this.firstName, this.lastName, this.signupDate);
+    public void testSearchingForPeoples() throws Exception {
+        Person person = personService.createPerson(this.name, this.loginName,this.password, this.signupDate);
 
-        assertEquals(1, customerService.search("josh").size());
+        assertEquals(1, personService.search("josh").size());
     }
 }
