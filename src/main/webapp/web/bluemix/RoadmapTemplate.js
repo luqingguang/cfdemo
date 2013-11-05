@@ -10,6 +10,9 @@ define([ "dojo/_base/declare",
          "dijit/_TemplatedMixin", 
          "dijit/_WidgetsInTemplateMixin",
          "dojo/text!./resources/RoadmapTemplate.html",
+         "dijit/form/HorizontalSlider", 
+         "dijit/form/HorizontalRule", 
+         "dijit/form/HorizontalRuleLabels"
 ], 
 function(declare, parser, _WidgetBase, _TemplatedMixin,_WidgetsInTemplateMixin, template) {
 return declare("bluemix.RoadmapTemplate", 
@@ -31,6 +34,10 @@ return declare("bluemix.RoadmapTemplate",
 		service = this;
 		this.constructor.superclass.startup.apply(this);	
 	},
+	
+	onhorizontalSliderChange: function(value){
+		this.milestone.innerHTML = "MileStone " + value;
+	}
 
 });
 });

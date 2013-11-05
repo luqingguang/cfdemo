@@ -15,10 +15,31 @@
 			<div class="roadmap_description" style="margin:10px 0;font-size:0.9em">
 				<p>Are you qualified to be Band7? These are the things that you should know.</p>	
 			</div>
-			<div class="roadmap_link"  style="margin:10px 0;font-size:0.9em;font-style:italic;">
+			
+			<div style="width:300px;"
+			    name="horizontalSlider"
+			    data-dojo-type="dijit/form/HorizontalSlider"
+			    data-dojo-props="value:1,
+			    minimum: 1,
+			    maximum:3,
+			    discreteValues:3,
+			    intermediateChanges:true,
+			    showButtons:true"
+			    data-dojo-attach-event='onChange:onhorizontalSliderChange'>
+			    <div data-dojo-type="dijit/form/HorizontalRule" container="bottomDecoration"
+			        count=3 style="height:5px;"></div>
+			    <ol data-dojo-type="dijit/form/HorizontalRuleLabels" container="bottomDecoration"
+			        style="height:1em;font-size:75%;color:gray;">
+			        <li>M1</li>
+			        <li>M2</li>
+			        <li>M3</li>
+			    </ol>
+			</div>
+			
+			
+			<div data-dojo-attach-point="milestone"
+				class="milestone"  style="margin:10px 0;font-size:0.9em;font-style:italic;">
 				
-				<div class="milestone"><span style="color:blue;font-weight:bold">Milestone 1: </span>Leadership</div>
-				<div class="milestone"><span style="color:blue;font-weight:bold">Milestone 2: </span>Technique</div>
 			</div>
 			<div class="reading_toolbar" style="margin-top:30px;font-size:0.8em">
 				<a href="#">Like</a>
