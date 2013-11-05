@@ -26,7 +26,7 @@
 <body style="font-size:16px"  class="claro">
 	<div class="header">
 		<div class="title">
-			<a id="userLink" class="rightMargin20" href="${pageContext.request.contextPath}/myReading">Winnie
+			<a id="userLink" class="rightMargin20" href="${pageContext.request.contextPath}">Home
 			</a>
 			<h3>Fun Reading</h3>
 			<div id="searchBox"></div>
@@ -35,21 +35,15 @@
 	<div class="mainContent">
 		<div id="tabs" class="tabs fixedblock">
 			<ul>
-				<li class="selected">Top Stories</li>
-				<li id="readings">Readings</li>
-				<li id="roadmaps">Roadmaps</li>
-				<li id="friends">My Friends</li>
+				<li class="selected">Profile</li>
+				<li>Follow Topic</li>
+				<li>Find People</li>
+				<li>Roadmaps</li>
+				<li>Readings</li>
 			</ul>
 		</div>
-		<div id="content" class="content">
-		</div>
-		<div id="section1" class="outterDialog fixedblock">	
-			<span>My Roadmaps</span>
-		</div>
-		<div id="section2" class="outterDialog fixedblock">	
-			<span>My Readings</span>
-		</div>
+		<div id="content" class="content ">
 
+		</div>
 	</div>
-	
 </body>
