@@ -36,18 +36,15 @@
 		<div id="tabs" class="tabs fixedblock">
 			<ul>
 				<li class="selected">Top Stories</li>
+				<li id="roadmap">Roadmaps</li>
 				<li id="readings">Readings</li>
-				<li id="roadmaps">Roadmaps</li>
-				<li id="friends">My Friends</li>
+				<li id="friends">My Friends</li>			
+				
 			</ul>
 		</div>
 		<div id="content" class="content">
 		</div>
-		<div id="section1" class="outterDialog fixedblock">	
-			<span>My Roadmaps</span>
-		</div>
-		<div id="section2" class="outterDialog fixedblock">	
-			<span>My Readings</span>
+		<div id="section" class="outterDialog fixedblock">	
 		</div>
 
 	</div>

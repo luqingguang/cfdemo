@@ -18,7 +18,7 @@
     	};
     </script>
     <script src="${pageContext.request.contextPath}/web/dojo_1.9.1/dojo/dojo.js"></script>
-    <script src="${pageContext.request.contextPath}/web/views/reading.js"></script>
+    <script src="${pageContext.request.contextPath}/web/views/myreading.js"></script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/dojo_1.9.1/dojo/resources/dojo.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/dojo_1.9.1/dijit//themes/claro/claro.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/views/reading.css"/>
@@ -36,7 +36,7 @@
 		<div id="tabs" class="tabs fixedblock">
 			<ul>
 				<li class="selected">Profile</li>
-				<li>Follow Topic</li>
+				<li id="topics">Follow Topic</li>
 				<li>Find People</li>
 				<li>Roadmaps</li>
 				<li>Readings</li>

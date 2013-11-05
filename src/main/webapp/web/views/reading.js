@@ -1,4 +1,4 @@
-require(["dijit/form/TextBox","dijit/form/Button","dojo/query","dojo/ready","bluemix/ReadingTemplate"],function(TextBox,Button,query,ready,ReadingTemplate){
+require(["dijit/form/TextBox","dijit/form/Button","dojo/query","dojo/ready","bluemix/MyRoadmapsTemplate","bluemix/MyReadingsTemplate"],function(TextBox,Button,query,ready,MyRoadmapsTemplate,MyReadingsTemplate){
 	ready(function(){
 		var searchBox = new TextBox({
 			placeHolder:"Search"
@@ -15,18 +15,19 @@ require(["dijit/form/TextBox","dijit/form/Button","dojo/query","dojo/ready","blu
 		else
 			title.appendChild(questionBtn.domNode);
 		
-		var content = query("#content")[0];
-		var readings = new ReadingTemplate();
-		content.appendChild(readings.domNode);
-		readings = new ReadingTemplate();
-		content.appendChild(readings.domNode);
+		window.loadRoadmaps();
 		
+		var section = document.getElementById("section");
+		var myRoadmap = new MyRoadmapsTemplate();
+		section.appendChild(myRoadmap.domNode);
+		var myReadings = new MyReadingsTemplate();
+		section.appendChild(myReadings.domNode);
 	});
 });
 
 require(["dojo/on","dojo/ready"],function(on,ready){
 	ready(function(){
-		on(document.getElementById("roadmaps"),"click",window.loadRoadmaps);
+		on(document.getElementById("roadmap"),"click",window.loadRoadmaps);
 		on(document.getElementById("readings"),"click",window.loadReadings);
 		on(document.getElementById("friends"),"click",window.loadFriends);
 	});
@@ -38,7 +39,7 @@ function setMainContentTabs(selectedId){
 		ready(function(){
 			query(".mainContent .tabs ul li").forEach(function(ele){
 				if(ele.id == selectedId){
-					ele.className += "selected";
+					ele.className = "selected";
 				}else{
 					ele.className = ele.className.replace("selected","");
 					}
@@ -70,8 +71,7 @@ function loadRoadmaps(){
 	
 	require(["dojo/dom-construct","bluemix/RoadmapTemplate"], function(domConstruct,RoadmapTemplate){
 		
-		window.setMainContentTabs("roadmaps");
-		
+		  window.setMainContentTabs("roadmap");
 		  // Empty node's children byId:
 		  domConstruct.empty("content");
 		  

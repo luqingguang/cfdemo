@@ -9,6 +9,7 @@
 
 body {
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow-y:scroll;
 }
 
 .header {
@@ -94,10 +95,19 @@ body {
 	position:fixed !important;
 	margin-left:720px;
 	width:240px;
-	height:150px;
 	border:1px dotted;
 }
 
 #section2{
 	top: 260px !important;
+}
+
+.reading_toolbar a{
+	color:#538dc2;
+	text-decoration:none;
+	padding-right:20px;
+}
+
+.followDiv:hover {
+	cursor:pointer;
 }
