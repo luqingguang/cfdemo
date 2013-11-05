@@ -15,25 +15,19 @@
     	};
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
-    <script src="${pageContext.request.contextPath}/web/views/login.js"></script>
+    <script src="${pageContext.request.contextPath}/web/views/reading.js"></script>
     <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
     <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit//themes/claro/claro.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/views/login.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/views/reading.css"/>
 </head>
 <body style="font-size:16px"  class="claro">
 	<div class="header">
-		<ul class="linkList">
-			<li class="item">Home</li>
-			<li class="item">About</li>
-			<li class="item">Contact</li>
-		</ul>
-		<h3 class="productName">Fun Reading</h3>
+		<div class="title">
+			<a id=""href="#">Winnie
+			</a>
+			<h3>Fun Reading</h3>
+			<div id="searchBox"></div>
+		</div>
 	</div>
-	<div class="mainContent" >
-		<h1>Welcome to Fun Reading</h1>
-		<p>Fun Reading is not just about fun, it helps you: <br> 1. explore the best roadmaps to become an expert. <br> 2. explore the activities of your friends. <br> 3. keep track of reading roadmaps.</p>
-		
-		<div id="login"></div>
-	</div>
-	<div class="footer"></div>
+	<div class="mainContent"></div>
 </body>

@@ -1,0 +1,20 @@
+.header {
+	background-color:#e0e0e0;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.header .title, .mainContent{
+	width:860px;
+	margin:auto;
+}
+
+.title a {
+	float:right;
+}
+
+.title h3 {
+	float:left;
+	margin-top:0;
+	margin-right:20px;
+}
