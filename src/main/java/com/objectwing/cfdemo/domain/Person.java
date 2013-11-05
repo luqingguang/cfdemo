@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +18,7 @@ public class Person implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer personId;
 
     
     private Date signupDate;
@@ -35,12 +35,12 @@ public class Person implements Serializable {
     
     
 
-    public Integer getId() {
-        return id;
+    public Integer getPersonId() {
+        return personId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPersonId(Integer personId) {
+        this.personId = personId;
     }
 
     

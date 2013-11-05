@@ -4,11 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name="topic")
@@ -18,11 +17,20 @@ public class Topic implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer topicId;
 	
-	private Catalog catalog;	
+	@ManyToOne
+	private Category category;
+	
 	private String title;
 	private String description;
+	
+	public Integer getTopicId() {
+		return topicId;
+	}
+	public void setTopicId(Integer topicId) {
+		this.topicId = topicId;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -35,13 +43,11 @@ public class Topic implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Catalog getCatalog() {
-		return catalog;
+	public Category getCategory() {
+		return category;
 	}
-	public void setCatalog(Catalog catalog) {
-		this.catalog = catalog;
-	}
-
-    
+	public void setCatalog(Category category) {
+		this.category = category;
+	}   
     
 }

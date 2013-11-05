@@ -47,7 +47,7 @@ public class PersonController {
     @RequestMapping(value = PERSON_ENTRY_URL, method = RequestMethod.POST)
     public Integer addPerson(@RequestParam String name, @RequestParam String loginName
     		,@RequestParam String password) {
-        return personService.createPerson(name, loginName, password, new Date()).getId();
+        return personService.createPerson(name, loginName, password, new Date()).getPersonId();
     }
 
     @ResponseBody
