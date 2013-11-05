@@ -89,8 +89,8 @@ public class PersonServiceTest {
          assertEquals(person.getName(), this.name);
          assertEquals(person.getLoginName(), this.loginName);
          assertEquals(person.getSignupDate(), this.signupDate);
-
-        personService.updatePerson(person.getPersonId(), "Joshua", person.getPassword(), person.getSignupDate());
+               
+         personService.updatePerson(person.getPersonId(), "Joshua", person.getPassword(), person.getSignupDate());
 
         person = personService.getPersonById(person.getPersonId());
         assertEquals(person.getName(), "Joshua");

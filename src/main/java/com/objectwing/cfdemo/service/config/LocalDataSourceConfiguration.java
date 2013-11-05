@@ -72,7 +72,7 @@ public class LocalDataSourceConfiguration   {
     @Bean
     public CacheManager cacheManager() throws Exception {
         SimpleCacheManager scm = new SimpleCacheManager();
-        Cache cache = new ConcurrentMapCache("customers");
+        Cache cache = new ConcurrentMapCache("persons");
         scm.setCaches(Arrays.asList(cache));
         return scm;
     }

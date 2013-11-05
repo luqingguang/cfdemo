@@ -33,6 +33,9 @@ public class Milestone implements Serializable {
 	@ManyToOne
 	private Person updateBy;
 	
+	@ManyToOne
+	private Roadmap roadmap;
+	
 	@OneToMany(mappedBy="milestone",cascade = CascadeType.ALL)
 	@OrderBy(value = "sequence ASC") 
 	private List<MilestoneReading> milestoneReadings;
@@ -104,6 +107,11 @@ public class Milestone implements Serializable {
 		this.description = description;
 	}
 
-    
+	public Roadmap getRoadmap() {
+		return roadmap;
+	}
+	public void setRoadmap(Roadmap roadmap) {
+		this.roadmap = roadmap;
+	}
     
 }

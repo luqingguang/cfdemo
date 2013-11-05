@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name="people")
+@Table(name="person")
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1L;
