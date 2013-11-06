@@ -60,7 +60,7 @@ body {
 
 .mainContent .tabs ul{
 	list-style:none;
-	
+	margin-bottom:20px;
 }
 
 .mainContent .tabs ul li{
@@ -81,7 +81,7 @@ body {
 }
 
 .mainContent .content {
-	width: 550px; /*(760-150)*/
+	width: 810px; /*(960-150)*/
 	margin-top:70px;/*90-20*/
 	margin-left:150px;
 	font-size:0.9em;
@@ -108,6 +108,7 @@ body {
 	padding-right:20px;
 }
 
-.followDiv:hover {
+.actionBtn:hover {
 	cursor:pointer;
+	background-color:lightblue;
 }

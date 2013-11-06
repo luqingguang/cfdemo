@@ -21,7 +21,7 @@
 	  	      ]
     	};
     </script>
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
+    <script src="${pageContext.request.contextPath}/web/dojo_1.9.1/dojo/dojo.js"></script>
     <script src="${pageContext.request.contextPath}/web/views/testing.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/web/views/customers.css"/>
