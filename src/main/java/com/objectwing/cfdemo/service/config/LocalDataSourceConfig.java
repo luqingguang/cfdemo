@@ -25,7 +25,7 @@ import java.util.Map;
 
 @Configuration
 @Profile("default")
-public class LocalDataSourceConfiguration   {
+public class LocalDataSourceConfig   {
 
 
     @Bean

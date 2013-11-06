@@ -31,7 +31,7 @@ import com.objectwing.cfdemo.domain.Person;
 
 @Configuration
 @Profile("cloud")
-public class CloudFoundryDataSourceConfiguration   {
+public class CloudFoundryDataSourceConfig   {
 
     private CloudEnvironment cloudEnvironment = new CloudEnvironment();
 

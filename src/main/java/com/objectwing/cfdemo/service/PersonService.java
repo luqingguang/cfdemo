@@ -69,4 +69,9 @@ public class PersonService {
         person.setPassword(password);        
         em.merge(person);
     }
+
+	public Person findPersonByLoginName(String loginName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

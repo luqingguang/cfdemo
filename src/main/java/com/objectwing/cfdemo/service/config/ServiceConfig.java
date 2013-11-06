@@ -15,9 +15,9 @@ import javax.persistence.EntityManagerFactory;
 @PropertySource("/config.properties")
 @EnableCaching
 @EnableTransactionManagement
-@Import({CloudFoundryDataSourceConfiguration.class, LocalDataSourceConfiguration.class})
+@Import({CloudFoundryDataSourceConfig.class, LocalDataSourceConfig.class})
 @ComponentScan(basePackageClasses = {PersonService.class})
-public class ServicesConfiguration {
+public class ServiceConfig {
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) throws Exception {

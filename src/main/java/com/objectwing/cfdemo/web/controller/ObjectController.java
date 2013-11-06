@@ -146,7 +146,7 @@ public class ObjectController {
     }
     
     @ResponseBody
-    @RequestMapping(value = ROADMAP_ENTRY_URL, method = RequestMethod.POST)
+    @RequestMapping(value = OBJECT_ENTRY_URL, method = RequestMethod.POST)
     public Integer operateObject() {
     	
     	/*request
