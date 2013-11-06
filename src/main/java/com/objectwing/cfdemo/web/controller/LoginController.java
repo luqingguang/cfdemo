@@ -44,7 +44,7 @@ public class LoginController {
     }
     
     @ResponseBody
-    @RequestMapping(value = LOGIN_ENTRY_URL, method = RequestMethod.POST)
+    @RequestMapping(value = SIGNUP_ENTRY_URL, method = RequestMethod.POST)
     public HashMap<String,Object> signup() {
     	/*
     	 * request
