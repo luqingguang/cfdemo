@@ -18,8 +18,13 @@ public class Task implements Serializable {
 	public static final String TASK_TYPE_READING = "Reading";
 	public static final String TASK_TYPE_MILESTONE = "Milestone";
 	public static final String TASK_TYPE_ROADMAP = "Roadmap";
-	public static final String TASK_STATUS_CREATE = "Create";
-	public static final String TASK_STATUS_COMPLETE = "Complete";
+	public static final String TASK_READ_YES = "Y";
+	public static final String TASK_READ_NO = "N";
+	public static final String TASK_LIKE_YES = "Y";
+	public static final String TASK_LIKE_NO = "N";
+	public static final String TASK_FAVORITE_YES = "Y";
+	public static final String TASK_FAVORITE_NO = "N";
+	
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,15 +34,19 @@ public class Task implements Serializable {
 	
 	private Integer taskObjectId;
 	
-	private Integer parentObjectId;
+	private String read;
 	
-	private Integer sequence;
+	private String like;
 	
-	private String status;
+	private String favorite;	
 	
 	private Date createDate;
 	
-	private Date completeDate;
+	private Date readDate;
+	
+	private Date likeDate;
+	
+	private Date favoriteDate;
 
 	public Integer getTaskId() {
 		return taskId;
@@ -59,33 +68,9 @@ public class Task implements Serializable {
 		return taskObjectId;
 	}
 
-	public void setTaskObjectId(Integer taskObjectId) {
-		this.taskObjectId = taskObjectId;
-	}
+	
 
-	public Integer getParentObjectId() {
-		return parentObjectId;
-	}
-
-	public void setParentObjectId(Integer parentObjectId) {
-		this.parentObjectId = parentObjectId;
-	}
-
-	public Integer getSequence() {
-		return sequence;
-	}
-
-	public void setSequence(Integer sequence) {
-		this.sequence = sequence;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 
 	public Date getCreateDate() {
 		return createDate;
@@ -95,12 +80,54 @@ public class Task implements Serializable {
 		this.createDate = createDate;
 	}
 
-	public Date getCompleteDate() {
-		return completeDate;
+	public String getRead() {
+		return read;
 	}
 
-	public void setCompleteDate(Date completeDate) {
-		this.completeDate = completeDate;
-	}    
+	public void setRead(String read) {
+		this.read = read;
+	}
+
+	public String getLike() {
+		return like;
+	}
+
+	public void setLike(String like) {
+		this.like = like;
+	}
+
+	public String getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(String favorite) {
+		this.favorite = favorite;
+	}
+
+	public Date getReadDate() {
+		return readDate;
+	}
+
+	public void setReadDate(Date readDate) {
+		this.readDate = readDate;
+	}
+
+	public Date getLikeDate() {
+		return likeDate;
+	}
+
+	public void setLikeDate(Date likeDate) {
+		this.likeDate = likeDate;
+	}
+
+	public Date getFavoriteDate() {
+		return favoriteDate;
+	}
+
+	public void setFavoriteDate(Date favoriteDate) {
+		this.favoriteDate = favoriteDate;
+	}
+
+    
     
 }
