@@ -11,7 +11,6 @@
 	  	      packages:[
 				{name: "dojo", location: contextPath + "/web/dojo_1.9.1/dojo"},
 				{name: "dijit", location: contextPath + "/web/dojo_1.9.1/dijit"},
-				{name: "dojox", location: contextPath + "/web/dojo_1.9.1/dojox"},
 				{name: "idx", location: contextPath + "/web/idx"},
 				{name: "bluemix", location: contextPath + "/web/bluemix"}
 	  	      ]
@@ -34,18 +33,20 @@
 	</div>
 	<div class="mainContent">
 		<div id="tabs" class="tabs fixedblock">
-			<ul>
-				<li class="selected">Top Stories</li>
-				<li id="roadmap">Roadmaps</li>
-				<li id="readings">Readings</li>
-				<li id="friends">My Friends</li>			
-				
+			<ul class="public">
+				<li id="all">All Posts</li>				
+			</ul>
+			<ul class="private">
+				<li id="favorites">My Favorites</li>
+				<li id="likes">My Likes</li>
+				<li id="mytopics">My Topics</li>
+				<li id="myposts">My Posts</li>
 			</ul>
 		</div>
 		<div id="content" class="content">
 		</div>
-		<div id="section" class="outterDialog fixedblock">	
-		</div>
+		<!-- div id="section" class="outterDialog fixedblock">	
+		</div-->
 
 	</div>
 	

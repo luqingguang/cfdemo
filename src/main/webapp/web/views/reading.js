@@ -15,21 +15,23 @@ require(["dijit/form/TextBox","dijit/form/Button","dojo/query","dojo/ready","blu
 		else
 			title.appendChild(questionBtn.domNode);
 		
-		window.loadRoadmaps();
+		window.loadAll();
 		
-		var section = document.getElementById("section");
+		/*var section = document.getElementById("section");
 		var myRoadmap = new MyRoadmapsTemplate();
 		section.appendChild(myRoadmap.domNode);
 		var myReadings = new MyReadingsTemplate();
-		section.appendChild(myReadings.domNode);
+		section.appendChild(myReadings.domNode);*/
 	});
 });
 
 require(["dojo/on","dojo/ready"],function(on,ready){
 	ready(function(){
-		on(document.getElementById("roadmap"),"click",window.loadRoadmaps);
-		on(document.getElementById("readings"),"click",window.loadReadings);
-		on(document.getElementById("friends"),"click",window.loadFriends);
+		on(document.getElementById("all"),"click",window.loadAll);
+		on(document.getElementById("favorites"),"click",window.loadFavorites);
+		on(document.getElementById("likes"),"click",window.loadLikes);
+		on(document.getElementById("mytopics"),"click",window.loadMyTopics);
+		on(document.getElementById("myposts"),"click",window.loadMyPosts);
 	});
 });
 
@@ -48,18 +50,16 @@ function setMainContentTabs(selectedId){
 	});
 }
 
-function loadReadings(){
+function loadAll(){
 	
-	require(["dojo/dom-construct","bluemix/ReadingTemplate"], function(domConstruct,ReadingTemplate){
+	require(["dojo/dom-construct","bluemix/MixTemplate"], function(domConstruct,MixTemplate){
 		
-		  window.setMainContentTabs("readings");
+		  window.setMainContentTabs("all");
 		  // Empty node's children byId:
 		  domConstruct.empty("content");
 		  
 		  var content = document.getElementById("content");
-		  var roadmap = new ReadingTemplate();
-		  content.appendChild(roadmap.domNode);
-		  roadmap = new ReadingTemplate();
+		  var roadmap = new MixTemplate();
 		  content.appendChild(roadmap.domNode);
 	});
 	
@@ -67,37 +67,61 @@ function loadReadings(){
 }
 
 
-function loadRoadmaps(){
+function loadFavorites(){
 	
-	require(["dojo/dom-construct","bluemix/RoadmapTemplate"], function(domConstruct,RoadmapTemplate){
+	require(["dojo/dom-construct","bluemix/MyFavoritesTemplate"], function(domConstruct,MyFavoritesTemplate){
 		
-		  window.setMainContentTabs("roadmap");
+		  window.setMainContentTabs("favorites");
 		  // Empty node's children byId:
 		  domConstruct.empty("content");
 		  
 		  var content = document.getElementById("content");
-		  var roadmap = new RoadmapTemplate();
-		  content.appendChild(roadmap.domNode);
-		  roadmap = new RoadmapTemplate();
-		  content.appendChild(roadmap.domNode);
+		  content.appendChild(new MyFavoritesTemplate().domNode);
 	});
 	
 	
 }
 
-function loadFriends(){
+function loadLikes(){
 	
-	require(["dojo/dom-construct","bluemix/MyFriendTemplate"], function(domConstruct,MyFriendTemplate){
+	require(["dojo/dom-construct","bluemix/MyLikesTemplate"], function(domConstruct,MyLikesTemplate){
 		
-		  window.setMainContentTabs("friends");
+		  window.setMainContentTabs("likes");
 		  // Empty node's children byId:
 		  domConstruct.empty("content");
 		  
 		  var content = document.getElementById("content");
-		  var roadmap = new MyFriendTemplate();
-		  content.appendChild(roadmap.domNode);
-		  roadmap = new MyFriendTemplate();
-		  content.appendChild(roadmap.domNode);
+		  content.appendChild(new MyLikesTemplate().domNode);
+	});
+	
+	
+}
+
+function loadMyTopics(){
+	
+	require(["dojo/dom-construct","bluemix/MyTopicsTemplate"], function(domConstruct,MyTopicsTemplate){
+		
+		  window.setMainContentTabs("mytopics");
+		  // Empty node's children byId:
+		  domConstruct.empty("content");
+		  
+		  var content = document.getElementById("content");
+		  content.appendChild(new MyTopicsTemplate().domNode);
+	});
+	
+	
+}
+
+function loadMyPosts(){
+	
+	require(["dojo/dom-construct","bluemix/MyPostsTemplate"], function(domConstruct,MyPostsTemplate){
+		
+		  window.setMainContentTabs("myposts");
+		  // Empty node's children byId:
+		  domConstruct.empty("content");
+		  
+		  var content = document.getElementById("content");
+		  content.appendChild(new MyPostsTemplate().domNode);
 	});
 	
 	

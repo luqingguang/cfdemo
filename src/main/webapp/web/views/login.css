@@ -25,6 +25,7 @@ body {
 	margin-top:0;
 	margin-bottom:20px;
 	line-height:40px;
+	color:#999;
 }
 
 .header .linkList {
@@ -43,6 +44,7 @@ body {
 
 .linkList .item:hover {
 	color:lightblue;
+	cursor:pointer;
 }
 
 .mainContent {
@@ -69,4 +71,44 @@ body {
 
 .footer {
 	border-top:1px solid #e5e5e5;
+}
+.ulpersonalList{
+	list-style: none;
+	margin-top:50px;
+}
+.lipersonal{
+	float:left;
+	margin-right: 80px;
+	margin-left:80px;
+}
+ul.ulpersonalList img{
+	float: left;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	width:80px;
+	height:80px;
+}
+li.lipersonal h3{
+	float:left;
+	margin:0px;
+}
+li.lipersonal p{
+	margin-left:90px;
+	font-family: "Times New Roman";
+}
+.aboutContent{
+	float:left;
+	margin:10px;
+}
+div.aboutContent p{
+	margin-right: 50px;
+	font-size: 1.3rem;
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+}
+div.aboutContent img{
+	float: left;
+	margin-left: 100px;
+	margin-top: 30px;
+	width:170px;
+	height:200px;
 }

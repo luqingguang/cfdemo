@@ -6,45 +6,31 @@
 				src='web/images/default.png'>
 		</div>
 		<div style="margin-left:20px;">
-			<div class="roadmap_message" style="font-size:0.8em;color:#A3A0A0">
+			<div data-dojo-attach-point="reading_message" class="roadmap_message" style="font-size:0.8em;color:#A3A0A0">
 				New Roadmap added into Topic J2EE.
 			</div>
-			<div class="roadmap_title" style="margin:10px 0;font-weight:bold;color:#19558d">
+			<div data-dojo-attach-point="roadmap_title" class="roadmap_title" style="margin:10px 0;font-weight:bold;color:#19558d">
 				Band7 Enablement
 			</div>
 			<div class="roadmap_description" style="margin:10px 0;font-size:0.9em">
-				<p>Are you qualified to be Band7? These are the things that you should know.</p>	
+				<p data-dojo-attach-point="roadmap_description" >Are you qualified to be Band7? These are the things that you should know.</p>	
 			</div>
 			
-			<div style="width:300px;"
-			    name="horizontalSlider"
-			    data-dojo-type="dijit/form/HorizontalSlider"
-			    data-dojo-props="value:1,
-			    minimum: 1,
-			    maximum:3,
-			    discreteValues:3,
-			    intermediateChanges:true,
-			    showButtons:true"
-			    data-dojo-attach-event='onChange:onhorizontalSliderChange'>
-			    <div data-dojo-type="dijit/form/HorizontalRule" container="bottomDecoration"
-			        count=3 style="height:5px;"></div>
-			    <ol data-dojo-type="dijit/form/HorizontalRuleLabels" container="bottomDecoration"
-			        style="height:1em;font-size:75%;color:gray;">
-			        <li>M1</li>
-			        <li>M2</li>
-			        <li>M3</li>
-			    </ol>
+			<div style="width:400px;font-size:0.9em">
+			    <div data-dojo-attach-point="Introductory" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Introductory',open:false">
+			    </div>
+			    <div data-dojo-attach-point="Intermediate" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Intermediate',open:false">
+			    </div>
+			    <div data-dojo-attach-point="Advanced" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Advanced',open:false">
+			    </div>
 			</div>
-			
-			
-			<div data-dojo-attach-point="milestone"
-				class="milestone"  style="margin:10px 0;font-size:0.9em;font-style:italic;">
-				
+			<div class="roadmap_description" style="margin:10px 0;font-size:0.9em">
+				<p>3 milestones drive you from Freshmen to Expert. Enjoy your journey.</p>	
 			</div>
 			<div class="reading_toolbar" style="margin-top:30px;font-size:0.8em">
-				<a href="#">Like</a>
-				<a href="#">Follow</a>
-				<a href="#">Comments</a>
+				<a data-dojo-attach-point="likeBtn" href="#">Like</a>
+				<a data-dojo-attach-point="commentBtn" href="#">Comments</a>
+				<a data-dojo-attach-point="favoriteBtn" href="#">Add to My Favorites</a>
 			</div>
 		</div>
 
