@@ -72,7 +72,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		HashMap<String, String> filterMap = new HashMap<String, String>();
 
 		filterMap.put("/*", "anon");
-		filterMap.put("/", "authc");
+		//filterMap.put("/", "authc");
 
 		shiroFilter.setFilterChainDefinitionMap(filterMap);
 
